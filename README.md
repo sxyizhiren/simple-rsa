@@ -31,7 +31,7 @@ setMaxDigits(maxdigits);
 
 函数的参数maxdigits跟n的位数有关。关系是
 
-maxdigits=maxdigits的十六进制长度+3  
+maxdigits=n的十六进制长度 + 3  
 
 比如上面n的字符串长度是64，对应32字节的数值。maxdigits就是35，所以maxdigits必须大于35，可大不可小。
 
