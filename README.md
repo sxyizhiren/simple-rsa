@@ -1,6 +1,12 @@
 simple-rsa
 ==========
 
+install:
+
+npm install simple-rsa
+
+
+
 a simple rsa module,using for encode password.
 
 Usage:
@@ -44,3 +50,8 @@ maxdigits=n的十六进制长度 + 3
 所以比如上面n的字符串长度是64，对应32字节的数值，他给你的maxdigits是19.那么你要在setMaxDigits的时候自己乘以2.
 
 RSAKeyPair的第二个参数和解密有关，加密时随便写即可
+
+
+参考资料：
+
+http://www.ohdave.com/rsa/
