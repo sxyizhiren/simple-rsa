@@ -19,37 +19,13 @@ var encParam = {
 	
     "n" : "856381005a1659cb02d13f3837ae6bb0fab86012effb3a41c8b84badce287759",
 	
-    "maxdigits" : 38,
-	
-    "text":"something"
-	
 };
 
-RSATool.setMaxDigits(encParam.maxdigits);
+var encryptor=RSATool.Encryptor(encParam.e,encParam.n);
 
-var key=new RSATool.RSAKeyPair(encParam.e,"null",encParam.n);
+var pass1=encryptor('12345');
 
-return RSATool.encryptedString(key, encParam.text);
-
-////////////////////////
-
-setMaxDigits(maxdigits);
-
-函数的参数maxdigits跟n的位数有关。关系是
-
-maxdigits=n的十六进制长度 + 3  
-
-比如上面n的字符串长度是64，对应32字节的数值。maxdigits就是35，所以maxdigits必须大于35，可大不可小。
-
-如果n是十六进制16位（对应长度32的字符串），maxdigits就设成19。可大不可小。
-
-///////////////////////
-
-注，很多地方都会给出maxdigits的值，但是一般给你的是除以2之后的值，
-
-所以比如上面n的字符串长度是64，对应32字节的数值，他给你的maxdigits是19.那么你要在setMaxDigits的时候自己乘以2.
-
-RSAKeyPair的第二个参数和解密有关，加密时随便写即可
+var pass2=encryptor('this is a test!');
 
 
 参考资料：
